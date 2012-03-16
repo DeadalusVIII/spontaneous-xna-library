@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Language name="US English" icon="Languages/UsFlag">
+  <Strings>
+    <String key="MainMenu" value="Main Menu" />
+    <String key="StartGame" value="Start Game" />
+    <String key="Options" value="Options" />
+    <String key="Credits" value="Credits" />
+    <String key="Help" value="Help" />
+    <String key="ExitGame" value="Exit Game" />
+    <String key="ExitAreSure" value="Are you sure you want to exit Tag Tournament?" />
+    <String key="Yes" value="Yes" />
+    <String key="No" value="No" />
+    <String key="Controls" value="Controls" />
+    <String key="Graphics" value="Graphics" />
+    <String key="Cheats" value="Cheats" />
+    <String key="Sound" value="Sound" />
+    <String key="Language" value="Language" />
+    <String key="Back" value="Back" />
+    <String key="Player" value="Player" />
+    <String key="Up" value="Up" />
+    <String key="Down" value="Down" />
+    <String key="Left" value="Left" />
+    <String key="Right" value="Right" />
+    <String key="Action" value="Action" />
+    <String key="Tag" value="Tag" />
+    <String key="Ok" value="Ok" />
+    <String key="Resolution" value="Resolution" />
+    <String key="Fullscreen" value="Fullscreen" />
+    <String key="Color Scheme" value="Color Scheme" />
+    <String key="Blue" value="Blue" />
+    <String key="Green" value="Green" />
+    <String key="Red" value="Red" />
+    <String key="Black" value="Black" />
+    <String key="Orange" value="Orange" />
+    <String key="Yellow" value="Yellow" />
+    <String key="Violet" value="Violet" />
+    <String key="EnterCheatCode" value="Enter Cheat Code" />
+    <String key="EnterCheat" value="Enter Cheat" />
+    <String key="Cheater" value="Cheater" />
+    <String key="AllUnlocked" value="All game modes and maps unlocked" />
+    <String key="TagfernoUnlocked" value="Tagferno difficulty mode unlocked" />
+    <String key="CheatCodeNotRecognized" value="Cheat code not recognized" />
+    <String key="CheatCodeError" value="Cheat Code Error" />
+    <String key="On" value="On" />
+    <String key="Off" value="Off" />
+    <String key="SoundVolume" value="Sound Volume" />
+    <String key="Music" value="Music" />
+    <String key="MusicVolume" value="Music Volume" />
+    <String key="Loading" value="Loading" />
+    <String key="GamesTeam5" value="Games - Team 5" />
+    <String key="Programming" value="Programming" />
+    <String key="CharacterItemDesign" value="Character and Item Design" />
+    <String key="LevelDesign" value="Level Design" />
+    <String key="SoundEffects" value="Sound Effects" />
+    <String key="Players" value="Players" />
+    <String key="SelectGender" value="Select Gender" />
+    <String key="BoysVsBoys" value="Boys vs. Boys" />
+    <String key="GirlsVsGirls" value="Girls vs. Girls" />
+    <String key="PauseMenu" value="Pause Menu" />
+    <String key="ResumeGame" value="Resume Game" />
+    <String key="ReturnToMainMenu" value="Return to Main Menu" />
+    <String key="SureReturnToMainMenu" value="Are you sure you want to end this game and return to the main menu?" />
+    <String key="TimeLimit" value="Time Limit" />
+    <String key="MinSingular" value="Min" />
+    <String key="MinPlural" value="Mins" />
+    <String key="SecSingular" value="Sec" />
+    <String key="SecPlural" value="Secs" />
+    <String key="PointLimit" value="Point Limit" />
+    <String key="Points" value="Points" />
+    <String key="Vs" value="vs." />
+    <String key="Ready" value="Ready" />
+    <String key="StartMsg" value="Start" />
+    <String key="Draw" value="Draw" />
+    <String key="TimeExtension" value="Time Extension" />
+    <String key="BreakOver" value="Break\nOver" />
+    <String key="Health" value="Health" />
+    <String key="Score" value="Score" />
+    <String key="TotalTime" value="Total Time"/>
+    <String key="Continue" value="Continue"/>    
+    <String key="RoundResults" value="Round Results"/>
+    <String key="Winner" value="Winner"/>
+    <String key="Loser" value="Perdedor"/>    
+    <String key="FinalScore" value="Final Score"/>
+    <String key="Tags" value="Tags"/>
+    <String key="TagPoints" value="Tag Points"/>
+    <String key="TagsCleaned" value="Tags Cleaned"/>
+    <String key="TagsLost" value="Tags Lost"/>
+    <String key="TagPointsLost" value="Tag Points Lost"/>
+    <String key="TimesBeaten" value="Times Beaten"/>
+    <String key="TimesFainted" value="Times Fainted"/>
+    <String key="TimesSlipped" value="Times Slipped"/>
+    <String key="PickUpsThrown" value="PickUps Thrown"/>
+    <String key="PowerupsEffects" value="Powerups Effects"/>
+    <String key="PositivePowerupEffects" value="Positive Powerup Effects"/>
+    <String key="NegativePowerupsEffects" value="Negative Powerups Effects"/>
+    <String key="DamageHealed" value="Damage Healed"/>
+    <String key="DamageSuffered" value="Damage Suffered"/>
+    <String key="TournamentResults" value="Tournament Results"/>
+    <String key="TotalRounds" value="Total Rounds"/>
+    <String key="CustomizePlayer" value="Customize Player"/>
+    
+
+    <String key="TimeExtender" value="Time Extender"/>
+    <String key="Accuser" value="Accuser"/>
+    <String key="Potion" value="Potion"/>
+    <String key="Dagger" value="Dagger"/>
+    <String key="Invulnerability" value="Invulnerability"/>
+    <String key="Freeze" value="Freeze"/>
+    <String key="BadPen" value="Bad Pen"/>
+    <String key="GoodPen" value="Good Pen"/>
+    <String key="DoubleDamage" value="Double Damage"/>
+    <String key="HalfDamage" value="Half Damage"/>
+    <String key="BadRubber" value="Bad Rubber"/>
+    <String key="GoodRubber" value="Good Rubber"/>
+    <String key="RunningShoes" value="Running Shoes"/>
+    <String key="ChurchShoes" value="Church Shoes"/>
+    <String key="Pill" value="Pill"/>
+    <String key="Poison" value="Poison"/>
+
+    <String key="ParkerGoodPen" value="Parker Good Pen"/>
+    <String key="BicBadPen" value="Bic Bad Pen"/>
+    <String key="NikeRunningShoes" value="Nike Running Shoes"/>
+    <String key="CamportChurchShoes" value="Camport Church Shoes"/>
+    <String key="LidlBadRubber" value="Lidl Bad Rubber"/>
+    <String key="StaplesGood Rubber" value="Staples Good Rubber"/>
+    <String key="SwatchTimeExtender" value="Swatch Time Extender"/>
+    <String key="BayerPill" value="Bayer Pill"/>
+    <String key="RaidPoison" value="Raid Poison"/>
+    <String key="RedBullPotion" value="Red Bull Potion"/>
+
+    <String key="VorticeGoodPen" value="Vortice Good Pen"/>
+    <String key="DotspotBadPen" value="Dotspot Bad Pen"/>
+    <String key="TriboxRunningShoes" value="Tribox Running Shoes"/>
+    <String key="AbbsChurchShoes" value="Abbs Church Shoes"/>
+    <String key="BlastedBadRubber" value="Blasted Bad Rubber"/>
+    <String key="LuceGoodRubber" value="Luce Good Rubber"/>
+    <String key="HexagTimeExtender" value="Hexag Time Extender"/>
+    <String key="CalciumPill" value="Calcium Pill"/>
+    <String key="BoblesPoison" value="Bobles Poison"/>
+    <String key="YellowArrowPotion" value="Yellow Arrow Potion"/>
+
+    <String key="AnswerForm" value="Answer to the Survey" />
+  </Strings>
+</Language>
