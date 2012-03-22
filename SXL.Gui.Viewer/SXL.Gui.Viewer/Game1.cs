@@ -11,7 +11,7 @@ namespace SXL.Gui.Viewer
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        private GuiSystem guiSystem;
+
 
         public Game1()
         {
@@ -28,7 +28,7 @@ namespace SXL.Gui.Viewer
         /// </summary>
         protected override void Initialize()
         {
-            guiSystem = new GuiSystem(this);
+
 
             base.Initialize();
         }
@@ -65,9 +65,7 @@ namespace SXL.Gui.Viewer
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            guiSystem.Update(gameTime);
-            guiSystem.UpdateInteraction(gameTime);
-            guiSystem.UpdateWindows(gameTime);
+
 
             base.Update(gameTime);
         }
@@ -80,8 +78,7 @@ namespace SXL.Gui.Viewer
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            guiSystem.Draw(gameTime,spriteBatch);
-            guiSystem.DrawInteraction(gameTime,spriteBatch);
+
 
             base.Draw(gameTime);
         }
