@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SXL.Gui.Viewer", "SXL.Gui.Viewer\SXL.Gui.Viewer\SXL.Gui.Viewer.csproj", "{8E7CE88E-1B16-47AD-B908-6DB2112AF387}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SXL.Gui.ViewerContent", "SXL.Gui.Viewer\SXL.Gui.ViewerContent\SXL.Gui.ViewerContent.contentproj", "{A561D4CE-0623-4997-8186-A76616455778}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SXL.Gui", "SXL.Gui\SXL.Gui.csproj", "{05E99BBD-6780-477D-93DF-3C22A7413B69}"
@@ -11,17 +9,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SXL.ComponentFramework", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SXL.TextureManipulator", "SXL.TextureManipulator\SXL.TextureManipulator.csproj", "{D0CC1302-356C-4484-ABC7-C4F0614DA599}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SXL.TextureManipulator.Viewer", "SXL.TextureManipulator.Viewer\SXL.TextureManipulator.Viewer\SXL.TextureManipulator.Viewer.csproj", "{BEA2947A-24F7-4ED1-8CD9-A77CF95EA4E6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SXL.TextureManipulator.ViewerContent", "SXL.TextureManipulator.Viewer\SXL.TextureManipulator.ViewerContent\SXL.TextureManipulator.ViewerContent.contentproj", "{B556BA44-03C7-4D9E-AC81-33D7866E8ED7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SXL.Language", "SXL.Language\SXL.Language.csproj", "{482A4668-D8C7-4CA6-A190-1B64393B5732}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SXL.Language.Pipeline", "SXL.Language.Pipeline\SXL.Language.Pipeline.csproj", "{6C17F904-AB54-424C-9542-ED87B1BA5B60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SXL.Language.Viewer", "SXL.Language.Viewer\SXL.Language.Viewer\SXL.Language.Viewer.csproj", "{724B6E06-1CB3-419F-BA06-835BBD4542A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SXL.Debug", "SXL.Debug\SXL.Debug.csproj", "{C480675E-B8D9-4AE2-BED9-250417EF8567}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SXL.Language.ViewerContent", "SXL.Language.Viewer\SXL.Language.ViewerContent\SXL.Language.ViewerContent.contentproj", "{2F248A42-6CC3-4F14-812A-7967D55319AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SXL.Viewer", "SXL.Viewer\SXL.Viewer\SXL.Viewer.csproj", "{899A3928-061A-430A-9CD3-252C35250FFF}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "SXL.ViewerContent", "SXL.Viewer\SXL.ViewerContent\SXL.ViewerContent.contentproj", "{B86D2352-3FAD-442D-94A1-6C026E0712F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +25,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8E7CE88E-1B16-47AD-B908-6DB2112AF387}.Debug|x86.ActiveCfg = Debug|x86
-		{8E7CE88E-1B16-47AD-B908-6DB2112AF387}.Debug|x86.Build.0 = Debug|x86
-		{8E7CE88E-1B16-47AD-B908-6DB2112AF387}.Release|x86.ActiveCfg = Release|x86
-		{8E7CE88E-1B16-47AD-B908-6DB2112AF387}.Release|x86.Build.0 = Release|x86
 		{A561D4CE-0623-4997-8186-A76616455778}.Debug|x86.ActiveCfg = Debug|x86
 		{A561D4CE-0623-4997-8186-A76616455778}.Release|x86.ActiveCfg = Release|x86
 		{05E99BBD-6780-477D-93DF-3C22A7413B69}.Debug|x86.ActiveCfg = Debug|x86
@@ -47,12 +39,6 @@ Global
 		{D0CC1302-356C-4484-ABC7-C4F0614DA599}.Debug|x86.Build.0 = Debug|x86
 		{D0CC1302-356C-4484-ABC7-C4F0614DA599}.Release|x86.ActiveCfg = Release|x86
 		{D0CC1302-356C-4484-ABC7-C4F0614DA599}.Release|x86.Build.0 = Release|x86
-		{BEA2947A-24F7-4ED1-8CD9-A77CF95EA4E6}.Debug|x86.ActiveCfg = Debug|x86
-		{BEA2947A-24F7-4ED1-8CD9-A77CF95EA4E6}.Debug|x86.Build.0 = Debug|x86
-		{BEA2947A-24F7-4ED1-8CD9-A77CF95EA4E6}.Release|x86.ActiveCfg = Release|x86
-		{BEA2947A-24F7-4ED1-8CD9-A77CF95EA4E6}.Release|x86.Build.0 = Release|x86
-		{B556BA44-03C7-4D9E-AC81-33D7866E8ED7}.Debug|x86.ActiveCfg = Debug|x86
-		{B556BA44-03C7-4D9E-AC81-33D7866E8ED7}.Release|x86.ActiveCfg = Release|x86
 		{482A4668-D8C7-4CA6-A190-1B64393B5732}.Debug|x86.ActiveCfg = Debug|x86
 		{482A4668-D8C7-4CA6-A190-1B64393B5732}.Debug|x86.Build.0 = Debug|x86
 		{482A4668-D8C7-4CA6-A190-1B64393B5732}.Release|x86.ActiveCfg = Release|x86
@@ -61,12 +47,16 @@ Global
 		{6C17F904-AB54-424C-9542-ED87B1BA5B60}.Debug|x86.Build.0 = Debug|x86
 		{6C17F904-AB54-424C-9542-ED87B1BA5B60}.Release|x86.ActiveCfg = Debug|x86
 		{6C17F904-AB54-424C-9542-ED87B1BA5B60}.Release|x86.Build.0 = Debug|x86
-		{724B6E06-1CB3-419F-BA06-835BBD4542A8}.Debug|x86.ActiveCfg = Debug|x86
-		{724B6E06-1CB3-419F-BA06-835BBD4542A8}.Debug|x86.Build.0 = Debug|x86
-		{724B6E06-1CB3-419F-BA06-835BBD4542A8}.Release|x86.ActiveCfg = Release|x86
-		{724B6E06-1CB3-419F-BA06-835BBD4542A8}.Release|x86.Build.0 = Release|x86
-		{2F248A42-6CC3-4F14-812A-7967D55319AF}.Debug|x86.ActiveCfg = Debug|x86
-		{2F248A42-6CC3-4F14-812A-7967D55319AF}.Release|x86.ActiveCfg = Release|x86
+		{C480675E-B8D9-4AE2-BED9-250417EF8567}.Debug|x86.ActiveCfg = Debug|x86
+		{C480675E-B8D9-4AE2-BED9-250417EF8567}.Debug|x86.Build.0 = Debug|x86
+		{C480675E-B8D9-4AE2-BED9-250417EF8567}.Release|x86.ActiveCfg = Release|x86
+		{C480675E-B8D9-4AE2-BED9-250417EF8567}.Release|x86.Build.0 = Release|x86
+		{899A3928-061A-430A-9CD3-252C35250FFF}.Debug|x86.ActiveCfg = Debug|x86
+		{899A3928-061A-430A-9CD3-252C35250FFF}.Debug|x86.Build.0 = Debug|x86
+		{899A3928-061A-430A-9CD3-252C35250FFF}.Release|x86.ActiveCfg = Release|x86
+		{899A3928-061A-430A-9CD3-252C35250FFF}.Release|x86.Build.0 = Release|x86
+		{B86D2352-3FAD-442D-94A1-6C026E0712F3}.Debug|x86.ActiveCfg = Debug|x86
+		{B86D2352-3FAD-442D-94A1-6C026E0712F3}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

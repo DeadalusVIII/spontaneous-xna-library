@@ -1,29 +1,34 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
+using SXL.Debug;
+using SXL.Viewer.TextureManipulator;
 
-namespace SXL.Language.Viewer
+namespace SXL.Viewer
 {
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class Game1 : Microsoft.Xna.Framework.Game
+    public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        GraphicsDeviceManager _graphics;
+        SpriteBatch _spriteBatch;
 
+        private TextureManipulatorTester _textureManipulatorTester;
+
+        private FrameRateDisplay _frameRateDisplay;
 
         public Game1()
         {
-            graphics = new GraphicsDeviceManager(this);
+            _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            _graphics.PreferredBackBufferWidth = 1024;
+            _graphics.PreferredBackBufferHeight = 768;
+            _graphics.ApplyChanges();
+
+            _textureManipulatorTester = new TextureManipulatorTester(this);
+            
         }
 
         /// <summary>
@@ -46,7 +51,11 @@ namespace SXL.Language.Viewer
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
+            _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            _frameRateDisplay = new FrameRateDisplay(this,"Debug/Arial14");
+
+            //_textureManipulatorTester.LoadContent(Content);
         }
 
         /// <summary>
@@ -69,7 +78,8 @@ namespace SXL.Language.Viewer
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
+            //_textureManipulatorTester.Update(gameTime);
+            _frameRateDisplay.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -83,6 +93,10 @@ namespace SXL.Language.Viewer
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            _textureManipulatorTester.Draw(gameTime,_spriteBatch);
+            _spriteBatch.Begin();
+            _frameRateDisplay.Draw(gameTime,_spriteBatch);
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
