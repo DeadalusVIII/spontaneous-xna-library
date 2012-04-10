@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SXL.Viewer", "SXL.Viewer\SX
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SXL.ViewerContent", "SXL.Viewer\SXL.ViewerContent\SXL.ViewerContent.contentproj", "{B86D2352-3FAD-442D-94A1-6C026E0712F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SXL.Cameras", "SXL.Cameras\SXL.Cameras.csproj", "{C32FB29F-B494-459A-879A-6E5BDB9728EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -53,6 +55,10 @@ Global
 		{899A3928-061A-430A-9CD3-252C35250FFF}.Release|x86.Build.0 = Release|x86
 		{B86D2352-3FAD-442D-94A1-6C026E0712F3}.Debug|x86.ActiveCfg = Debug|x86
 		{B86D2352-3FAD-442D-94A1-6C026E0712F3}.Release|x86.ActiveCfg = Release|x86
+		{C32FB29F-B494-459A-879A-6E5BDB9728EA}.Debug|x86.ActiveCfg = Debug|x86
+		{C32FB29F-B494-459A-879A-6E5BDB9728EA}.Debug|x86.Build.0 = Debug|x86
+		{C32FB29F-B494-459A-879A-6E5BDB9728EA}.Release|x86.ActiveCfg = Release|x86
+		{C32FB29F-B494-459A-879A-6E5BDB9728EA}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

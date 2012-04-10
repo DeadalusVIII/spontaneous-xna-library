@@ -100,7 +100,7 @@
     <Compile Include="Components\MouseComponent.cs" />
     <Compile Include="Components\Trajectory.cs" />
     <Compile Include="Components\TrajectoryComponent.cs" />
-    <Compile Include="OrthogonalCamera.cs" />
+    <Compile Include="OrthographicCamera.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TargetCamera.cs" />
   </ItemGroup>
