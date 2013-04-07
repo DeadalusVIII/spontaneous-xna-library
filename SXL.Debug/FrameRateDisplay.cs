@@ -6,16 +6,23 @@ namespace SXL.Debug
 {
     public class FrameRateDisplay : GameComponent
     {
-        readonly SpriteFont _spriteFont;
+        private readonly Game _game;
+        private readonly string _font;
+        private SpriteFont _spriteFont;
 
-        int _frameRate = 0;
-        int _frameCounter = 0;
-        TimeSpan _elapsedTime = TimeSpan.Zero;
+        private int _frameRate = 0;
+        private int _frameCounter = 0;
+        private TimeSpan _elapsedTime = TimeSpan.Zero;
 
 
         public FrameRateDisplay(Game game, String font) : base(game)
         {
-            _spriteFont = game.Content.Load<SpriteFont>(font);
+            _font = font;
+        }
+
+        public override void Initialize()
+        {
+            _spriteFont = Game.Content.Load<SpriteFont>(_font);
         }
 
         public override void Update(GameTime gameTime)
