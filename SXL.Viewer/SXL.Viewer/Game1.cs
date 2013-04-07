@@ -2,6 +2,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SXL.Debug;
+using SXL.Gui;
+using SXL.Viewer.Gui;
 using SXL.Viewer.TextureManipulator;
 
 namespace SXL.Viewer
@@ -17,6 +19,7 @@ namespace SXL.Viewer
         private TextureManipulatorTester _textureManipulatorTester;
 
         private FrameRateDisplay _frameRateDisplay;
+        private GuiTest guiTest;
 
         public Game1()
         {
@@ -26,6 +29,11 @@ namespace SXL.Viewer
             _graphics.PreferredBackBufferWidth = 1024;
             _graphics.PreferredBackBufferHeight = 768;
             _graphics.ApplyChanges();
+
+
+            
+            guiTest = new GuiTest(this);
+            this.Components.Add(guiTest);
 
             _textureManipulatorTester = new TextureManipulatorTester(this);
             
@@ -92,10 +100,14 @@ namespace SXL.Viewer
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
-            _textureManipulatorTester.Draw(gameTime,_spriteBatch);
             _spriteBatch.Begin();
+
+            // TODO: Add your drawing code here
+            /*_textureManipulatorTester.Draw(gameTime,_spriteBatch);
+            
             _frameRateDisplay.Draw(gameTime,_spriteBatch);
+            */
+            guiTest.Draw(gameTime, _spriteBatch);
             _spriteBatch.End();
 
             base.Draw(gameTime);

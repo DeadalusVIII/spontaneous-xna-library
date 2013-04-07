@@ -402,14 +402,82 @@ namespace SXL.TextureManipulator
 
         public static Texture2D DrawArc(this Texture2D texture2D, XnaColor color,float thickness,XnaRectangle rectangle,float startAngle,float sweepAngle)
         {
-            Pen pen = new Pen(color.ToGdiColor(), thickness);
+            Pen pen = new Pen(color.ToGDIColor(), thickness);
 
             Bitmap bitmap = texture2D.ToBitmap();
             Graphics graphics = Graphics.FromImage(bitmap);
-            graphics.SmoothingMode =SmoothingMode.AntiAlias;
+            graphics.SmoothingMode =SmoothingMode.HighQuality;
             graphics.DrawArc(pen,rectangle.X,rectangle.Y,rectangle.Width,rectangle.Height,startAngle,sweepAngle);
 
             return bitmap.ToTexture2D(texture2D.GraphicsDevice);
+        }
+
+        public static Texture2D DrawRoundedRectangle(this Texture2D texture2D, XnaColor color, float thickness, XnaRectangle rectangle)
+        {
+            Pen pen = new Pen(color.ToGDIColor(), thickness);
+
+            Bitmap bitmap = texture2D.ToBitmap();
+            Graphics graphics = Graphics.FromImage(bitmap);
+            graphics.SmoothingMode = SmoothingMode.HighQuality;
+            DrawRoundedRectangle(graphics, pen, rectangle.X, rectangle.Y, rectangle.Width,
+                                 rectangle.Height, 20, 20);
+
+            //graphics.DrawArc(pen, rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height, startAngle, sweepAngle);
+
+            return bitmap.ToTexture2D(texture2D.GraphicsDevice).Blur();
+        }
+
+        public static Texture2D Blur(this Texture2D texture2D)
+        {
+            EditableTexture2D editableTexture2D = new EditableTexture2D(texture2D);
+
+            for(int i = 1; i < editableTexture2D.Width-1;i++)
+            {
+                for (int j = 1; j < editableTexture2D.Height-1; j++)
+                {
+                    float r, g, b, a;
+                    r = g = b = a = 0;
+
+                    for(int k = -1; k <= 1;k++)
+                    {
+                        for (int l = -1; l <= 1; l++)
+                        {
+                            XnaColor newColor = editableTexture2D[i + k, j + l];
+                            r += newColor.R;
+                            g += newColor.G;
+                            b += newColor.B;
+                            a += newColor.A;
+                            //if (newColor.A != 0)
+                            //    Console.WriteLine();
+                        }
+                    }
+
+                    /*r /= 9f;
+                    g /= 9f;
+                    b /= 9f;
+                    a /= 9f;*/
+
+                    editableTexture2D[i,j] = new XnaColor((byte)(r / 9f), (byte)(g / 9f), (byte)(b / 9f), (byte)(a / 9f));
+                    //editableTexture2D[i, j] = new XnaColor(editableTexture2D[i, j].R, editableTexture2D[i, j].G, editableTexture2D[i, j].B, (byte)(a / 9f));
+                    //editableTexture2D[i, j] = new XnaColor((byte)(r / 9f), (byte)(g / 9f), (byte)(b / 9f), editableTexture2D[i, j].A);
+                }
+            }
+
+            return editableTexture2D.ToTexture2D();
+        }
+
+        static void DrawRoundedRectangle(Graphics g, Pen p,int x, int y, int w, int h, int rx, int ry)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(x, y, rx + rx, ry + ry, 180, 90);
+            path.AddLine(x + rx, y, x + w - rx, y);
+            path.AddArc(x + w - 2 * rx, y, 2 * rx, 2 * ry, 270, 90);
+            path.AddLine(x + w, y + ry, x + w, y + h - ry);
+            path.AddArc(x + w - 2 * rx, y + h - 2 * ry, rx + rx, ry + ry, 0, 91);
+            path.AddLine(x + rx, y + h, x + w - rx, y + h);
+            path.AddArc(x, y + h - 2 * ry, 2 * rx, 2 * ry, 90, 91);
+            path.CloseFigure();
+            g.DrawPath(p, path);
         }
 
         public static Texture2D IntersectOpaque(this Texture2D texture2D, Texture2D newTexture)
@@ -503,13 +571,13 @@ namespace SXL.TextureManipulator
         
         public static Texture2D DrawRectangle(this Texture2D texture2D, XnaColor color, float thickness, XnaRectangle rectangle, int rounding)
         {
-            Pen pen = new Pen(color.ToGdiColor(), thickness);
+            Pen pen = new Pen(color.ToGDIColor(), thickness);
 
             Bitmap bitmap = texture2D.ToBitmap();
             Graphics graphics = Graphics.FromImage(bitmap);
             
             //graphics.DrawRoundedRectangle(pen, rectangle.ToGdiRectangle(), rounding);
-            graphics.FillRoundedRectangle(new SolidBrush(XnaColor.Blue.ToGdiColor()), rectangle.ToGdiRectangle(), rounding);
+            graphics.FillRoundedRectangle(new SolidBrush(XnaColor.Blue.ToGDIColor()), rectangle.ToGdiRectangle(), rounding);
             graphics.DrawRoundedRectangle(pen, rectangle.ToGdiRectangle(), rounding);
 
             /*if (coiso == 0)
@@ -587,7 +655,7 @@ namespace SXL.TextureManipulator
 
         public static Texture2D DrawLine(this Texture2D texture2D, XnaColor color, float thickness, XnaPoint start, XnaPoint finish)
         {
-            Pen pen = new Pen(color.ToGdiColor(), thickness);
+            Pen pen = new Pen(color.ToGDIColor(), thickness);
 
             Bitmap bitmap = texture2D.ToBitmap();
             Graphics graphics = Graphics.FromImage(bitmap);
@@ -631,7 +699,7 @@ namespace SXL.TextureManipulator
                 for (int j = 0; j < texture2D.Height; j++)
                 {
                     XnaColor color = texturePixels[i + texture2D.Width*j];
-                    fastBitmap.SetPixel(i, j, color.ToGdiColor());
+                    fastBitmap.SetPixel(i, j, color.ToGDIColor());
                     
                     //bitmap.SetPixel(i, j, GDIColor.FromArgb(color.A, color.R, color.G, color.B));
                 }
@@ -642,7 +710,7 @@ namespace SXL.TextureManipulator
             return bitmap;
         }
 
-        private static Texture2D ToTexture2D(this Bitmap bitmap, GraphicsDevice graphicsDevice)
+        internal static Texture2D ToTexture2D(this Bitmap bitmap, GraphicsDevice graphicsDevice)
         {
             //reads the image data (which is a one-dimensional array)
             XnaColor[] texturePixels = new XnaColor[bitmap.Width * bitmap.Height];
@@ -672,17 +740,7 @@ namespace SXL.TextureManipulator
         
 
         #region Convert between GDI and XNA
-
-        public static XnaColor ToXnaColor(this GDIColor gdiColor)
-        {
-            return new XnaColor(gdiColor.R, gdiColor.G, gdiColor.B, gdiColor.A);
-        }
-
-        public static GDIColor ToGdiColor(this XnaColor xnaColor)
-        {
-            return GDIColor.FromArgb(xnaColor.A, xnaColor.R, xnaColor.G, xnaColor.B);
-        }
-
+        
         public static XnaPoint ToXnaPoint(this GDIPoint gdiPoint)
         {
             return new XnaPoint(gdiPoint.X, gdiPoint.Y);

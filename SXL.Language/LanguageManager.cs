@@ -73,6 +73,23 @@ namespace SXL.Language
             }
         }
 
+        public String[] this[String[] keys]
+        {
+            get
+            {
+                if (activeLanguageAsset == null)
+                    throw new InvalidOperationException("Language has not been set yet.");
+                
+                String[] values = new string[keys.Count()];
+                for (int i = 0; i < keys.Count(); i++)
+                {
+                    values[i] = activeLanguageAsset.Strings[keys[i]];
+                }
+
+                return values;
+            }
+        }
+
         public List<LanguageAsset> LanguageAssets
         {
             get { return languageAssets.Values.ToList(); }
