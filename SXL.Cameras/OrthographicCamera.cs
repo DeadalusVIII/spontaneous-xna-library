@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace SXL.Cameras
 {
@@ -9,11 +10,11 @@ namespace SXL.Cameras
         private float _nearPlaneDistance = 1f;
         private float _farPlaneDistance = 1000;
 
-        public OrthographicCamera(GraphicsDeviceManager newGraphics) 
-            : base(newGraphics)
+        public OrthographicCamera(GraphicsDevice device)
+            : base(device)
         {
-            _width = graphics.GraphicsDevice.Viewport.Width;
-            _height = graphics.GraphicsDevice.Viewport.Height;
+            _width = device.Viewport.Width;
+            _height = device.Viewport.Height;
         }
 
         public override void Initialize()

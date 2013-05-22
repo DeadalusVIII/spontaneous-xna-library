@@ -10,7 +10,7 @@ namespace SXL.Cameras
     public abstract class Camera
     {
         //from the main game system
-        protected readonly GraphicsDeviceManager graphics;
+        protected readonly GraphicsDevice device;
 
         //standard camera fields
         protected Matrix projectionMatrix;
@@ -28,9 +28,9 @@ namespace SXL.Cameras
         //protected bool bUpdateView;
         
 
-        protected Camera(GraphicsDeviceManager newGraphics)
+        protected Camera(GraphicsDevice newDevice)
         {
-            graphics = newGraphics;
+            device = newDevice;
         }
 
         #region Component Management
@@ -89,9 +89,9 @@ namespace SXL.Cameras
 
         #region Getters and Setters
 
-        internal GraphicsDeviceManager Graphics
+        internal GraphicsDevice Device
         {
-            get { return graphics; }
+            get { return device; }
         }
 
         public Matrix ProjectionMatrix
