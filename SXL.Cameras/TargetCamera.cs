@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace SXL.Cameras
 {
@@ -8,15 +9,15 @@ namespace SXL.Cameras
         private float _nearPlaneDistance = 1f;
         private float _farPlaneDistance = 1000;
 
-        public TargetCamera(GraphicsDeviceManager graphics)
-            : base(graphics)
+        public TargetCamera(GraphicsDevice device)
+            : base(device)
         {
         }
 
         public override void Initialize()
         {
             viewMatrix = Matrix.CreateLookAt(position, target, UpVector);
-            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60f), graphics.GraphicsDevice.Viewport.AspectRatio, _nearPlaneDistance, _farPlaneDistance);
+            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60f), device.Viewport.AspectRatio, _nearPlaneDistance, _farPlaneDistance);
         }
 
         public override void Update(GameTime gameTime)

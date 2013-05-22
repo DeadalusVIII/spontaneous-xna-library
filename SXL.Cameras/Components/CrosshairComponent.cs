@@ -19,8 +19,8 @@ namespace SXL.Cameras.Components
         {
             _crosshairTexture = contentManager.Load<Texture2D>(_crosshairPath);
 
-            _crosshairPosition = new Vector2(Camera.Graphics.GraphicsDevice.Viewport.Width / 2.0f - _crosshairTexture.Width / 2.0f,
-                                            Camera.Graphics.GraphicsDevice.Viewport.Height / 2.0f - _crosshairTexture.Height / 2.0f);
+            _crosshairPosition = new Vector2(Camera.Device.Viewport.Width / 2.0f - _crosshairTexture.Width / 2.0f,
+                                            Camera.Device.Viewport.Height / 2.0f - _crosshairTexture.Height / 2.0f);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

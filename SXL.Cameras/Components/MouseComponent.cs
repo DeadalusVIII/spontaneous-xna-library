@@ -17,7 +17,7 @@ namespace SXL.Cameras.Components
         public override void Initialize()
         {
             //centers the mouse into the window
-            Mouse.SetPosition(Camera.Graphics.GraphicsDevice.Viewport.Width / 2, Camera.Graphics.GraphicsDevice.Viewport.Height / 2);
+            Mouse.SetPosition(Camera.Device.Viewport.Width / 2, Camera.Device.Viewport.Height / 2);
 
             //save the current state of the mouse and keyboard to check for changes later
             previousMouseState = Mouse.GetState();
@@ -50,7 +50,7 @@ namespace SXL.Cameras.Components
                 }
 
                 Camera.UpdateView();
-                Mouse.SetPosition(Camera.Graphics.GraphicsDevice.Viewport.Width / 2, Camera.Graphics.GraphicsDevice.Viewport.Height / 2);
+                Mouse.SetPosition(Camera.Device.Viewport.Width / 2, Camera.Device.Viewport.Height / 2);
             }
         }
 
