@@ -29,6 +29,12 @@ namespace SXL.Cameras
                 viewMatrix = Matrix.CreateLookAt(Position, target, UpVector);
         }
 
+        public void UpdateFieldOfView()
+        {
+            //refreshes the field of view
+            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60f), device.Viewport.AspectRatio, _nearPlaneDistance, _farPlaneDistance);
+        }
+
         #region Getters and Setters
 
         public float FieldOfViewDegrees
