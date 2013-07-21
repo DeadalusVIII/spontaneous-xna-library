@@ -10,6 +10,7 @@
 #region Using Statements
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
 using Microsoft.Xna.Framework;
@@ -37,6 +38,8 @@ namespace SXL.WinForms
 
         private TimeSpan _previousTotalTime;
 
+        private readonly List<XControlComponent> _controlComponents = new List<XControlComponent>(); 
+
         /// <summary>
         /// Initializes the control, creating the ContentManager
         /// and using it to load a SpriteFont.
@@ -61,6 +64,8 @@ namespace SXL.WinForms
 
         protected virtual void LoadContent(ContentManager manager)
         {
+            foreach (XControlComponent xControlComponent in _controlComponents)
+                xControlComponent.LoadContent(manager);
         }
 
 
@@ -116,11 +121,14 @@ namespace SXL.WinForms
 
         protected virtual void Update(GameTime gameTime)
         {
-
+            foreach (XControlComponent xControlComponent in _controlComponents)
+                xControlComponent.Update(gameTime);
         }
 
         protected virtual void Draw(GameTime gameTime, SpriteBatch spritebatch)
         {
+            foreach (XControlComponent xControlComponent in _controlComponents)
+                xControlComponent.Draw(gameTime,spritebatch);
         }
 
 
@@ -134,6 +142,11 @@ namespace SXL.WinForms
         public Stopwatch Timer
         {
             get { return _timer; }
+        }
+
+        public List<XControlComponent> ControlComponents
+        {
+            get { return _controlComponents; }
         }
 
         #endregion
