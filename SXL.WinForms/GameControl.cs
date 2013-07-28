@@ -11,7 +11,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -88,14 +90,21 @@ namespace SXL.WinForms
         /// </summary>
         protected override void OnPaint(PaintEventArgs e)
         {
-            TimeSpan totalTime = _timer.Elapsed;
-            TimeSpan elapsedTime = totalTime - _previousTotalTime;
-
-            if (elapsedTime >= TargetElapsedTime)
+            if (!this.DesignMode)
             {
-                ActualPaint(e, new GameTime(totalTime, elapsedTime));
+                TimeSpan totalTime = _timer.Elapsed;
+                TimeSpan elapsedTime = totalTime - _previousTotalTime;
 
-                _previousTotalTime = totalTime;
+                if (elapsedTime >= TargetElapsedTime)
+                {
+                    ActualPaint(e, new GameTime(totalTime, elapsedTime));
+
+                    _previousTotalTime = totalTime;
+                }
+            }
+            else
+            {
+                e.Graphics.Clear(System.Drawing.Color.DarkGreen);
             }
         }
 
