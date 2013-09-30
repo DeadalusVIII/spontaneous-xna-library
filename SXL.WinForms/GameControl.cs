@@ -33,6 +33,7 @@ namespace SXL.WinForms
     public class GameControl : GraphicsDeviceControl
     {
         public readonly TimeSpan TargetElapsedTime = TimeSpan.FromTicks(TimeSpan.TicksPerSecond / 60);
+        public readonly TimeSpan MaxElapsedTime = TimeSpan.FromTicks(TimeSpan.TicksPerSecond / 10);
 
         private ContentManager _content;
         private SpriteBatch _spriteBatch;
@@ -95,6 +96,9 @@ namespace SXL.WinForms
                 TimeSpan totalTime = _timer.Elapsed;
                 TimeSpan elapsedTime = totalTime - _previousTotalTime;
 
+                if (elapsedTime > MaxElapsedTime)
+                    elapsedTime = MaxElapsedTime;
+
                 if (elapsedTime >= TargetElapsedTime)
                 {
                     ActualPaint(e, new GameTime(totalTime, elapsedTime));
@@ -105,7 +109,6 @@ namespace SXL.WinForms
             else
             {
                 base.OnPaint(e);
-                //e.Graphics.Clear(System.Drawing.Color.DarkGreen);
             }
         }
 
