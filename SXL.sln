@@ -127,6 +127,7 @@ Global
 		{F3813FB4-3E26-45B3-979C-D7F893CEF268}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{F3813FB4-3E26-45B3-979C-D7F893CEF268}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F3813FB4-3E26-45B3-979C-D7F893CEF268}.Release|x86.ActiveCfg = Release|Any CPU
+		{F3813FB4-3E26-45B3-979C-D7F893CEF268}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

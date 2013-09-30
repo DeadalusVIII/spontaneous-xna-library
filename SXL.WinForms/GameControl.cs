@@ -104,7 +104,8 @@ namespace SXL.WinForms
             }
             else
             {
-                e.Graphics.Clear(System.Drawing.Color.DarkGreen);
+                base.OnPaint(e);
+                //e.Graphics.Clear(System.Drawing.Color.DarkGreen);
             }
         }
 
